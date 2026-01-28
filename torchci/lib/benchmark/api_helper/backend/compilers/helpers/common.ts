@@ -5,6 +5,12 @@ export function extractBackendSqlStyle(
   mode: string,
   device: string
 ): string | null {
+  // This is only used in MPS, when the dtype is not set, it's actuall float32
+  // but the output filename uses the notset string
+  if (dtype === "float32" && device === "mps") {
+    dtype = "notset";
+  }
+
   const esc = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   const tail = `_${esc(suite)}_${esc(dtype)}_${esc(mode)}_${esc(device)}_`;
 
@@ -40,6 +46,7 @@ export function toApiDeviceArch(
     case "rocm":
       if (norm.includes("mi300x")) return [device, "mi300x"];
       if (norm.includes("mi325x")) return [device, "mi325x"];
+      if (norm.includes("radeon")) return [device, "mi355x"];
       return [device, norm];
     case "mps":
       return [device, norm];
