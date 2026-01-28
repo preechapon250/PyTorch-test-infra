@@ -36,10 +36,10 @@ jobs:
 
     steps:
     - name: Checkout test-infra
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
 
     - name: Checkout PyTorch repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
       with:
         repository: pytorch/pytorch
         path: pytorch
