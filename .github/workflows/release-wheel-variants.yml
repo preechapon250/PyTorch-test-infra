@@ -137,7 +137,7 @@ jobs:
       - name: Configure AWS credentials
         # Only configure AWS for workflow_dispatch with dry_run=false
         if: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run == false }}
-        uses: aws-actions/configure-aws-credentials@50ac8dd1e1b10d09dac7b8727528b91bed831ac0 # v3.0.2
+        uses: aws-actions/configure-aws-credentials@61815dcd50bd041e203e49132bacad1fd04d2708 # v5.1.1
         with:
           role-to-assume: arn:aws:iam::749337293305:role/gha_workflow_test_build_wheels
           aws-region: us-east-1
