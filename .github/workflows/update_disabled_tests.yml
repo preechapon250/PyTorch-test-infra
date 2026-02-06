@@ -20,7 +20,7 @@ jobs:
     environment: ${{ github.ref == 'refs/heads/main' && 'trigger-nightly' || '' }}
     steps:
       - name: Checkout
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
 
       - name: Generate new disabled tests and jobs jsons
         env:
@@ -108,7 +108,7 @@ jobs:
     needs: update-disabled-tests
     steps:
       - name: Download disabled artifacts
-        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7.0.0
         with:
           name: disabled-artifacts
 
