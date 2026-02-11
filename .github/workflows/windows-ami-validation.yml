@@ -23,7 +23,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
       - name: Setup `packer`
-        uses: hashicorp/setup-packer@76e3039aa951aa4e6efe7e6ee06bc9ceb072142d # main
+        uses: hashicorp/setup-packer@7e22a1322f99184aed11b12e1a7d9862203ca31a # main
         id: packer-setup
         with:
           version: ${{ env.PACKER_VERSION }}
