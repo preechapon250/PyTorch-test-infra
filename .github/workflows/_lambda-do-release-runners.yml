@@ -71,7 +71,7 @@ jobs:
         with:
           args: zip webhook.zip index.js
 
-      - uses: ncipollo/release-action@440c8c1cb0ed28b9f43e4d1d670870f059653174 # v1.16.0
+      - uses: ncipollo/release-action@b7eabc95ff50cbeeedec83973935c8f306dfcd0b # v1.20.0
         with:
           artifacts: "runner-binaries-syncer.zip,runners.zip,webhook.zip"
           allowUpdates: true
@@ -117,7 +117,7 @@ jobs:
       - name: Copy deployment.zip to root
         run: cp aws/lambda/${{ matrix.dir-name }}/deployment.zip ${{ matrix.zip-name }}.zip
 
-      - uses: ncipollo/release-action@440c8c1cb0ed28b9f43e4d1d670870f059653174 # v1.16.0
+      - uses: ncipollo/release-action@b7eabc95ff50cbeeedec83973935c8f306dfcd0b # v1.20.0
         with:
           artifacts: "${{ matrix.zip-name }}.zip"
           allowUpdates: true
@@ -141,7 +141,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           ref: ${{ inputs.tag }}
-      - uses: ncipollo/release-action@440c8c1cb0ed28b9f43e4d1d670870f059653174 # v1.16.0
+      - uses: ncipollo/release-action@b7eabc95ff50cbeeedec83973935c8f306dfcd0b # v1.20.0
         with:
           allowUpdates: true
           draft: false
